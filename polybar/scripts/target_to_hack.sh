@@ -3,7 +3,7 @@
 target=$(cat ~/.config/polybar/scripts/target)
 
 if [ $target ]; then
-    echo " $target"
+    echo "什 $target"
 else
-    echo " No target"
+    echo "ﱾ"
 fi
