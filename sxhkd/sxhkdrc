@@ -132,7 +132,7 @@ alt + super + {Left,Down,Up,Right}
 
 # Open Firefox
 super + shift + F
-	firejail /opt/firefox/firefox
+	firejail /usr/bin/firefox
 
 # Open Thunar
 super + shift + E
