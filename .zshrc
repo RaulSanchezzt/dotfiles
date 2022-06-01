@@ -188,6 +188,11 @@ function info() {
     #cputemp | awk '{ printf "%s %s", $1 $2 }'
 }
 
+function clearhistory(){
+  echo "" > ~/.zsh_history
+  exit 0
+}
+
 function kp() {
     ps aux | grep $1 > /dev/null
     mypid=$(pidof $1)
@@ -241,11 +246,13 @@ function remove(){
     shred -zun 10 -v $1
 }
 
+# Set Target (IP Address)
 function st(){
     target=$1
     echo "$target" > ~/.config/polybar/scripts/target
 }
 
+# Clear Target
 function ct(){
     echo '' > ~/.config/polybar/scripts/target
 }
