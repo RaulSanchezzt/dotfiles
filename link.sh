@@ -19,3 +19,19 @@
   # sxhkd
   ln -sf ~/dotfiles/sxhkd/ ~/.config/sxhkd
   echo "sxhkd symlink created"
+
+  # .zshrc
+  ln -sf ~/dotfiles/.zshrc ~/.zshrc
+  echo ".zshrc symlink created"
+
+  # .p10k.zsh
+  ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+  echo ".p10k.zsh symlink created"
+
+  # .gitconfig
+  ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+  echo ".p10k.zsh symlink created"
+
+  # fzf
+  sudo rm -rf /usr/share/doc/fzf/examples
+  sudo ln -sf ~/dotfiles/fzf/examples /usr/share/doc/fzf/examples
