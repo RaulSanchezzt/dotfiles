@@ -137,3 +137,7 @@ super + shift + F
 # Open Thunar
 super + shift + E
     thunar
+
+# Open Smile
+super + shift + S
+	flatpak run it.mijorus.smile
