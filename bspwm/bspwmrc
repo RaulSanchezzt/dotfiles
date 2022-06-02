@@ -25,7 +25,7 @@ bspc config focus_follows_pointer   true
 xsetroot -cursor_name left_ptr &
 
 # Wallpaper
-feh --bg-fill ~/.config/wallpapers/kali-neon-16x9.png
+feh --bg-fill ~/dotfiles/kali-wallpapers/kali-neon-16x9.png
 
 # Polybar
 ~/.config/polybar/./launch.sh &
