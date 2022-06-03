@@ -128,7 +128,7 @@ super + ctrl + {Left,Down,Up,Right}
  
 # Custom move/resize
 alt + super + {Left,Down,Up,Right}
-    ~/.config/bspwm/bspwm_resize {west,south,north,east}
+	~/.config/bspwm/bspwm_resize {west,south,north,east}
 
 # Open Firefox
 super + shift + F
@@ -136,8 +136,12 @@ super + shift + F
 
 # Open Thunar
 super + shift + E
-    thunar
+	thunar
 
 # Open Smile
 super + shift + S
 	flatpak run it.mijorus.smile
+
+# Open Zettlr
+super + shift + Z
+	flatpak run com.zettlr.Zettlr
