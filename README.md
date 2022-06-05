@@ -47,7 +47,7 @@ chmod +x link.sh
 | Super + Shift + (⬆⬅⬇➡)            | Change the position of tilted windows                                                               |
 | Super + CTRL + (⬆⬅⬇➡)             | Preselect the direction                                                                             |
 | Super + CTRL + (⬆⬅⬇➡)             | Preselect the ratio                                                                                 |
-| Super + CTRL + Space              |                                                                                                     |
+| Super + CTRL + Space              | Cancel the preselect                                                                                                    |
 
 ## Apps
 | **Key**           | **Action**     |
@@ -56,7 +56,7 @@ chmod +x link.sh
 | Super + Shift + F | Firefox        |
 | Super + Shift + A | Settings       |
 | Super + Shift + S | Smile (Emojis) |
-| Super + Shift + Z |                |
+| Super + Shift + Z | Zettlr         |
 | ALT + Space       | rofi           |
 
 ## References
