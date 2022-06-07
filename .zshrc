@@ -165,27 +165,7 @@ fi
 
 # Functions
 function mkt(){
-    mkdir {scans,content,loot,exploits,scripts,report}
-}
-
-function drive(){
-    lsblk | grep "sda"
-}
-
-function info() {
-    printf "CPU: "
-    cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
-    printf "\n"
-
-    cat /etc/issue | awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4 }'
-    uname -a | awk '{ printf "Kernel: %s " , $3 }'
-    uname -m | awk '{ printf "%s | " , $1 }'
-    printf "\n"
-    uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5 }' | sed 's/,//g'
-    printf "\n"
-    #cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
-    #cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
-    #cputemp | awk '{ printf "%s %s", $1 $2 }'
+    mkdir {content,exploits,nmap}
 }
 
 function clearhistory(){
@@ -207,27 +187,6 @@ function kp() {
     return;
 }
 
-# Extract Nmap Ports
-function xp(){
-    ports="$(cat $1 | grep -oP '\d{1,5}/open' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)"
-    echo "[+] Open ports: $ports"  >> xp.tmp
-    printf $ports | xclip -sel clip
-    echo "[+] Ports copied to clipboard"  >> xp.tmp
-    cat xp.tmp; rm xp.tmp
-}
-
-# OS Identifier
-function os() {
-    ttl="$(ping -c 1 $1 | awk -F 'ttl=' '{print $2}' | cut -d ' '  -f 1 | tr -d '\n')"
-    if (( $ttl <= 64 )); then
-        echo 'OS: Unix/Linux'
-    elif (( $ttl <= 128 )); then
-        echo 'OS: Windows'
-    else
-        echo 'OS: Not detected'
-    fi
-}
-
 # Set 'man' colors
 function man() {
     env \
@@ -241,11 +200,6 @@ function man() {
     man "$@"
 }
 
-function remove(){
-    scrub -p dod $1
-    shred -zun 10 -v $1
-}
-
 # Set Target (IP Address)
 function st(){
     target=$1
@@ -256,19 +210,6 @@ function st(){
 function ct(){
     echo '' > ~/.config/polybar/scripts/target
 }
-
-function PSCredential () {
-	echo -e "\n\t[+] \$user = 'user'"
-	echo -e "\t[+] \$pw = 'password'"
-	echo -e "\t[+] \$secpw = ConvertTo-SecureString \$pw -AsPlainText -Force"
-	echo -e "\t[+] \$cred = New-Object System.Management.Automation.PSCredential \$user, \$secpw"
-	echo -e "\t[+] Invoke-Command -ComputerName localhost -Credential \$cred -ScriptBlock { whoami }"
-}
-
-function PSCredentialOneLiner () {
-    echo -e "\$user='user';\$pw='password';\$secpw=ConvertTo-SecureString \$pw -AsPlainText -Force;\$cred=New-Object System.Management.Automation.PSCredential \$user, \$secpw;Invoke-Command -ComputerName localhost -Credential \$cred -ScriptBlock { whoami }"
-}
-
 
 # $PATH
 
