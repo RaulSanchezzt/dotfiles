@@ -20,7 +20,6 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinis
 
 # ========== CUSTOM ALIAS ========== #
-
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -36,63 +35,20 @@ alias catn='/usr/bin/cat'
 alias catnl='/bin/batcat --paging=never'
 alias fs='flameshot gui'
 alias np='sh ~/Documentos/new-blog-post/new_post.sh'
-
 # ========== GIT ALIAS ========== #
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 alias gl='git pull'
-# ========== METASPLOIT ALIAS ========== #
-alias msfconsole='sh ~/.config/polybar/scripts/metasploit.sh'
-
+alias gd='git diff'
 # ========== ZSH PLUGINS ========== #
 
-# SUDO
+# ZSH SUDO
 source /usr/share/zsh-plugins/sudo.plugin.zsh
 
-# Auto completion / suggestion
-# Mixing zsh-autocomplete and zsh-autosuggestions
-# Requires: zsh-autocomplete (custom packaging by Parrot Team)
-# Jobs: suggest files / foldername / histsory bellow the prompt
-# Requires: zsh-autosuggestions (packaging by Debian Team)
-# Jobs: Fish-like suggestion for command history
+# ZSH Autosuggestions
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source /usr/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# Select all suggestion instead of top on result only
-zstyle ':autocomplete:tab:*' insert-unambiguous yes
-zstyle ':autocomplete:tab:*' widget-style menu-select
-zstyle ':autocomplete:*' min-input 2
-bindkey '\e[A' up-line-or-history
-bindkey '\e[B' down-line-or-history
-
-# Use modern completion system
-autoload -Uz compinit
-compinit -i
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-##################################################
-# Fish like syntax highlighting
-# Requires "zsh-syntax-highlighting" from apt
-
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Save type history for completion and easier life
 HISTFILE=~/.zsh_history
@@ -103,76 +59,35 @@ setopt appendhistory
 # Share history between terminals
 setopt share_history
 
-# Useful alias for benchmarking programs
-# require install package "time" sudo apt install time
-# alias time="/usr/bin/time -f '\t%E real,\t%U user,\t%S sys,\t%K amem,\t%M mmem'"
-# Display last command interminal
-#echo -en "\e]2;Parrot Terminal\a"
-#preexec () { print -Pn "\e]0;$1 - Parrot Terminal\a" }
+# ZSH Syntax Highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# FZF keybindings
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+# FZF completion
+source /usr/share/doc/fzf/examples/completion.zsh
+
+# Power Level 10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# ========== FUNCTIONS ========== #
 
-# enable syntax-highlighting
-if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-	. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-	ZSH_HIGHLIGHT_STYLES[default]=none
-	ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
-	ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=cyan,bold
-	ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,underline
-	ZSH_HIGHLIGHT_STYLES[global-alias]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,underline
-	ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=green,underline
-	ZSH_HIGHLIGHT_STYLES[path]=underline
-	ZSH_HIGHLIGHT_STYLES[path_pathseparator]=
-	ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]=
-	ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[command-substitution]=none
-	ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[process-substitution]=none
-	ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-	ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow
-	ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
-	ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=yellow
-	ZSH_HIGHLIGHT_STYLES[rc-quote]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[assign]=none
-	ZSH_HIGHLIGHT_STYLES[redirection]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[comment]=fg=black,bold
-	ZSH_HIGHLIGHT_STYLES[named-fd]=none
-	ZSH_HIGHLIGHT_STYLES[numeric-fd]=none
-	ZSH_HIGHLIGHT_STYLES[arg0]=fg=green
-	ZSH_HIGHLIGHT_STYLES[bracket-error]=fg=red,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-1]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-2]=fg=green,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=magenta,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
-	ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
-fi
-
-# Functions
+# Create directories
 function mkt(){
     mkdir {content,exploits,nmap}
 }
 
+# Clear zsh_history
 function clearhistory(){
   echo "" > ~/.zsh_history
   exit 0
 }
 
+# Kill process
 function kp() {
     ps aux | grep $1 > /dev/null
     mypid=$(pidof $1)
@@ -210,35 +125,11 @@ function st(){
 function ct(){
     echo '' > ~/.config/polybar/scripts/target
 }
-
-# $PATH
-
-#export PATH=$PATH:/usr/local/sbin/:/usr/local/lib/:/home/$USER/.local/bin
-
-# Fix Java
-
+ 
+# ========== FIX ========== #
+# Java
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# Not supported in the "fish" shell.
-# (/usr/bin/cat ~/.cache/wal/sequences &)
-
-# Alternative (blocks terminal for 0-3ms)
-#cat ~/.cache/wal/sequences
-
-# To add support for TTYs this line can be optionally added.
-# source ~/.cache/wal/colors-tty.sh
-
-#Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
-
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-
-#Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
-
-source /usr/share/doc/fzf/examples/completion.zsh
-
-# Fix partial line symbol
+# Partial line symbol
 # https://stackoverflow.com/questions/36977990/why-zsh-adds-at-the-end-of-my-output
 export PROMPT_EOL_MARK=''
