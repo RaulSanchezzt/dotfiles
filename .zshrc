@@ -42,7 +42,7 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-
+alias gl='git pull'
 # ========== METASPLOIT ALIAS ========== #
 alias msfconsole='sh ~/.config/polybar/scripts/metasploit.sh'
 
