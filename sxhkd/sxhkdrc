@@ -145,3 +145,7 @@ super + shift + S
 # Open Zettlr
 super + shift + Z
 	flatpak run com.zettlr.Zettlr
+
+# Open Flameshot
+super + shift + G
+	flameshot gui

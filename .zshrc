@@ -33,8 +33,6 @@ alias egrep='egrep --color=auto'
 alias cat='/usr/bin/batcat'
 alias catn='/usr/bin/cat'
 alias catnl='/bin/batcat --paging=never'
-alias fs='flameshot gui'
-alias np='sh ~/Documentos/new-blog-post/new_post.sh'
 # ========== GIT ALIAS ========== #
 alias gs='git status'
 alias ga='git add'
