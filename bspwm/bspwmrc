@@ -4,7 +4,13 @@
 sxhkd &
 
 # Desktops
-bspc monitor -d 1 2 3 4 5 6 7 8
+bspc monitor HDMI-A-0 -d 2 3 4 5
+bspc monitor DVI-D-0 -d 1
+
+# Multiple Monitors Config
+if [[ $(xrandr -q | grep 'DisplayPort-0 connected') ]]; then
+	xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output DisplayPort-0 --mode 1440x900 --left-of HDMI-A-0w
+fi
 
 # Borders
 bspc config border_width            2
@@ -32,6 +38,3 @@ feh --bg-fill ~/dotfiles/kali-wallpapers/kali-neon-16x9.png
 
 # Picom
 picom &
-
-# Rules
-# bspc rule -a firefox desktop='^8' state=floating follow=on
