@@ -4,7 +4,7 @@ hosts_backup=/etc/hosts.bak
 htb_path=~/HTB
 
 checkBackupFile(){
-  clear;
+  # Checks if a backup copy exists
   if [ -f "$hosts_backup" ]; then
     # Restore hosts file
     sudo cp /etc/hosts.bak /etc/hosts
@@ -24,9 +24,7 @@ checkBackupFile(){
 
 readInfo(){
   # Get the information
-  clear;
   read -p "[?] Type the IP address of the box: " address;
-  clear;
   read -p "[?] Type the name of the box: " name;
   
   appendHosts;
@@ -35,40 +33,42 @@ readInfo(){
 appendHosts(){
   # Add the record to the hosts file
   echo "" | sudo tee -a /etc/hosts
-  echo "# Hack The Box Machine" | sudo tee -a /etc/hosts
+  echo "[!] Hack The Box Machine" | sudo tee -a /etc/hosts
   echo $address $name.htb | sudo tee -a /etc/hosts
-  clear;
-  
-  # Print hosts file
-  echo "[!] Content of the hosts file"
-  /usr/bin/batcat /etc/hosts
+  echo ""
   sleep 2;
-  clear;
 
   allowFirewall;
 }
 
 allowFirewall(){
   # Delete all previous ufw rules
-  sudo ufw reset
-  sudo ufw enable
+  sudo ufw --force reset >/dev/null 2>&1
+  sudo ufw enable >/dev/null 2>&1
 
   # Allows all target connections on the allowFirewall
-  sudo ufw allow from $address
-  clear;
+  sudo ufw allow from $address >/dev/null 2>&1
   
   # Print status of the firewall
   echo "[!] Firewall"
   sudo ufw status numbered
-  sleep 2;
-  clear;
 
-  createFolder;
+  createDirectory;
 }
 
-createFolder(){
-  # Create the folder of the machine
+createDirectory(){
+  # Create the working directory of the machine
   mkdir $htb_path/$name
+  echo "[!] Working directory created"
+  
+  setTarget;
 }
+
+setTarget(){  
+  # Set Target in Polybar
+  echo "$address" > ~/.config/polybar/scripts/target
+  echo "[!] Initial configuration completed"
+}
+
 # Start
 checkBackupFile;
