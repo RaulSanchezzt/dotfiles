@@ -66,7 +66,8 @@ createDirectory(){
 
 setTarget(){  
   # Set Target in Polybar
-  echo "$address" > ~/.config/polybar/scripts/target
+  echo "$address" > ~/.config/polybar/scripts/targetIP
+  echo "$name" > ~/.config/polybar/scripts/targetName
   echo "[!] Initial configuration completed"
 }
 
