@@ -34,6 +34,7 @@ alias cat='/usr/bin/batcat'
 alias catn='/usr/bin/cat'
 alias catnl='/bin/batcat --paging=never'
 alias htb='sh ~/dotfiles/polybar/scripts/new_htb_box.sh'
+alias ct='sh ~/dotfiles/polybar/scripts/clear_target.sh'
 # ========== GIT ALIAS ========== #
 alias gs='git status'
 alias ga='git add'
@@ -118,11 +119,6 @@ function man() {
 function st(){
     target=$1
     echo "$target" > ~/.config/polybar/scripts/target
-}
-
-# Clear Target
-function ct(){
-    echo '' > ~/.config/polybar/scripts/target
 }
 
 # Extract nmap information
