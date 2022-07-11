@@ -35,3 +35,6 @@
   # fzf
   sudo rm -rf /usr/share/doc/fzf/examples
   sudo ln -sf ~/dotfiles/fzf/examples /usr/share/doc/fzf/examples
+
+  # bat command
+  # sudo ln -sf /usr/bin/bat /usr/bin/batcat
