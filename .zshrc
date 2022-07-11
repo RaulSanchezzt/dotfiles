@@ -35,6 +35,7 @@ alias catn='/usr/bin/cat'
 alias catnl='/bin/batcat --paging=never'
 alias htb='sh ~/dotfiles/polybar/scripts/new_htb_box.sh'
 alias ct='sh ~/dotfiles/polybar/scripts/clear_target.sh'
+alias vpn='sudo openvpn ~/Escritorio/HTB/*.ovpn'
 # ========== GIT ALIAS ========== #
 alias gs='git status'
 alias ga='git add'
@@ -78,7 +79,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Create directories
 function mkt(){
-    mkdir {content,exploits,nmap}
+    mkdir {content,docs,exploits,nmap}
 }
 
 # Clear zsh_history
