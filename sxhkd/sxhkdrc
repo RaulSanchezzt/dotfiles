@@ -142,9 +142,9 @@ super + shift + E
 super + shift + S
 	flatpak run it.mijorus.smile
 
-# Open Zettlr
-super + shift + Z
-	flatpak run com.zettlr.Zettlr
+# Open Marktest
+super + shift + M
+	flatpak run com.github.marktext.marktext
 
 # Open Flameshot
 super + shift + G
