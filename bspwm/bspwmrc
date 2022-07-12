@@ -10,7 +10,7 @@ bspc monitor DVI-D-0 -d 1
 # Multiple Monitors Config
 xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output DisplayPort-0 --mode 1440x900 --left-of HDMI-A-0
 # Borders
-bspc config border_width            2
+bspc config border_width            0
 
 # Separation between windows
 bspc config window_gap              10
