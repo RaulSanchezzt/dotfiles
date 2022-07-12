@@ -149,3 +149,7 @@ super + shift + M
 # Open Flameshot
 super + shift + G
 	flameshot gui
+
+# Open Font Manager
+super + shift + O
+	flatpak run org.gnome.FontManager
