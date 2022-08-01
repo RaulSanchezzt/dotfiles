@@ -143,3 +143,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Partial line symbol
 # https://stackoverflow.com/questions/36977990/why-zsh-adds-at-the-end-of-my-output
 export PROMPT_EOL_MARK=''
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
