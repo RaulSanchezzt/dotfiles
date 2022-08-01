@@ -118,8 +118,10 @@ function man() {
 
 # Set Target (IP Address)
 function st(){
-    target=$1
-    echo "$target" > ~/.config/polybar/scripts/target
+    targetIP=$1
+    targetName=$2
+    echo "$targetIP" > ~/.config/polybar/scripts/targetIP
+    echo "$targetName" > ~/.config/polybar/scripts/targetName
 }
 
 # Extract nmap information
