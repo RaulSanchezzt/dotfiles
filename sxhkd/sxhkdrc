@@ -151,5 +151,9 @@ super + shift + G
 	flameshot gui
 
 # Open Font Manager
-super + shift + O
+super + shift + I
 	flatpak run org.gnome.FontManager
+
+# Open Obsidian
+super + shift + O
+	flatpak run md.obsidian.Obsidian
