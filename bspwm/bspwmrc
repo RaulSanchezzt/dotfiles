@@ -35,3 +35,6 @@ feh --bg-fill ~/dotfiles/kali-wallpapers/kali-neon-16x9.png
 
 # Picom
 picom &
+
+# Dropbox
+dropbox start &

@@ -35,7 +35,7 @@ alias catn='/usr/bin/cat'
 alias catnl='/bin/batcat --paging=never'
 alias htb='sh ~/dotfiles/polybar/scripts/new_htb_box.sh'
 alias ct='sh ~/dotfiles/polybar/scripts/clear_target.sh'
-alias vpn='sudo openvpn ~/Escritorio/HTB/*.ovpn'
+alias htbvpn='sudo openvpn ~/Dropbox/VPN/htb.ovpn'
 # ========== GIT ALIAS ========== #
 alias gs='git status'
 alias ga='git add'
@@ -135,7 +135,7 @@ function extractPorts(){
     echo -e "\t${grayColour}[*] Open ports:${endColour} ${redColour} $ports${endColour}\n"
 
     echo $ports | tr -d '\n' | xclip -sel clip
-    echo -e "${blueColour}[*]Ports copied to clipboard${endColour}\n"
+    echo -e "${blueColour}[*] Ports copied to clipboard${endColour}\n"
 }
 
 # ========== FIX ========== #
