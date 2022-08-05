@@ -1,7 +1,7 @@
 #!/bin/sh
 
 hosts_backup=/etc/hosts.bak
-htb_path=~/Escritorio/HTB/
+htb_path=~/Dropbox/HTB/
 
 checkBackupFile(){
   # Checks if a backup copy exists
