@@ -157,3 +157,7 @@ super + shift + I
 # Open Obsidian
 super + shift + O
 	flatpak run md.obsidian.Obsidian
+
+# Open BurpSuite
+super + shift + B
+  burpsuite
