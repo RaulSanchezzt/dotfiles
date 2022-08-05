@@ -33,9 +33,11 @@ alias egrep='egrep --color=auto'
 alias cat='/usr/bin/batcat'
 alias catn='/usr/bin/cat'
 alias catnl='/bin/batcat --paging=never'
-alias htb='sh ~/dotfiles/polybar/scripts/new_htb_box.sh'
 alias ct='sh ~/dotfiles/polybar/scripts/clear_target.sh'
-alias htbvpn='sudo openvpn ~/Dropbox/VPN/htb.ovpn'
+alias vpn='sh ~/dotfiles/scripts/vpn.sh'
+alias htb='sh ~/dotfiles/scripts/htb.sh'
+alias thm='sh ~/dotfiles/scripts/thm.sh'
+
 # ========== GIT ALIAS ========== #
 alias gs='git status'
 alias ga='git add'
@@ -43,6 +45,7 @@ alias gc='git commit'
 alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
+
 # ========== ZSH PLUGINS ========== #
 
 # ZSH SUDO
