@@ -3,16 +3,16 @@
 # Config Variables
 htb_folder=~/Repositories/htb-docusaurus/
 thm_folder=~/Repositories/thm-jekyll/
-thm_template="https://gitlab.com/RZZT/thm-jekyll/-/raw/main/_posts/template.md"
 
 # Current date
 date=$(date +"%Y-%m-%d")
 
 # Functions
 mainMenu(){
+  clear
   read -p "Name of the post: " name;
-  clear;
 
+  clear
   echo "1) Hack The Box"
   echo "2) Try Hack Me"
   echo "3) Blog"
@@ -28,19 +28,118 @@ mainMenu(){
   esac
 }
 
-HTB(){
-  echo "1) Machines"
-  echo "2) Challenges"
-  read -p "Select the template: " htbTemplate;
-}
+# Hack The Box Main Menu
+  HTB(){
+    clear
+    echo "1) Machines"
+    echo "2) Challenges"
+    read -p "Select the category: " htbCategory;
 
-THM(){
-  mkdir $thm_folder/_posts/$name
-  wget -O - $thm_template > $thm_folder/_posts/$name/$date-$name.md
-  mkdir $thm_folder/assets/img/$name
+    case $htbCategory in
+      1) htbMachines;;
+      2) htbChallenges;;
+      *) HTB;;
+    esac
+  }
+# Hack The Box Submenus
+    htbMachines(){
+      # Select OS of the machine
+      clear
+      echo "1) Linux"
+      echo "2) Windows"
+      read -p "Select the OS: " htbOS;
 
-  flatpak run com.github.marktext.marktext $thm_folder > /dev/null 2>&1 &
-}
+      case $htbOS in
+        1) os="linux";;
+        2) os="windows";;
+        *) htbMachines;;
+      esac
+    
+      # Select the Difficulty of the machine  
+      clear
+      echo "1) Easy"
+      echo "2) Medium"
+      echo "3) Hard"
+      echo "4) Insane"
+      read -p "Select the difficulty: " htbDifficulty;
+
+      case $htbDifficulty in
+        1) difficulty="easy";;
+        2) difficulty="medium";;
+        3) difficulty="hard";;
+        4) difficulty="insane";;
+        *) htbMachines;;
+      esac
+
+      # Create the post folder
+      mkdir -p $htb_folder/machines/$os/$difficulty/$name
+      # Copy the template and save it in his folder
+      cp $htb_folder/templates/machines.md $htb_folder/machines/$os/$difficulty/$name/$name.md
+
+      htbStart
+    }
+
+    htbChallenges(){
+      # Select the type of the challenge
+      clear
+      echo "1) Pwn"
+      echo "2) Hardware"
+      echo "3) Crypto"
+      echo "4) Mobile"
+      echo "5) Reversing"
+      echo "6) GamePwn"
+      echo "7) Forensics"
+      echo "8) Misc"
+      echo "9) Web"
+      read -p "Select the type: " htbType;
+
+      case $htbType in
+        1) type="pwn";;
+        2) type="hardware";;
+        3) type="crypto";;
+        4) type="mobile";;
+        5) type="reversing";;
+        6) type="gamepwn";;
+        7) type="forensics";;
+        8) type="misc";;
+        9) type="web";;
+        *) htbChallenges;;
+      esac
+
+      # Create the post folder
+      mkdir -p $htb_folder/challenges/$type/$name
+      # Copy the template and save it in his folder
+      cp $htb_folder/templates/challenges.md $htb_folder/challenges/$type/$name/$name.md
+
+      htbStart
+    }
+
+    htbStart(){
+      clear
+      # Start markdown editor
+      flatpak run com.github.marktext.marktext $htb_folder > /dev/null 2>&1 &
+      # Start local server http://localhost:3000/
+      cd $htb_folder
+      yarn start
+    }
+
+# Try Hack Me Main Menu
+  THM(){
+    clear
+    # Create the post folder
+    mkdir -p $thm_folder/_posts/$name
+    # Copy the template and save it in his folder
+    cp $thm_folder/_posts/template.md $thm_folder/_posts/$name/$date-$name.md
+    # Create the images folder
+    mkdir -p $thm_folder/assets/img/$name
+
+    # Start markdown editor
+    flatpak run com.github.marktext.marktext $thm_folder > /dev/null 2>&1 &
+
+    # Start local server http://localhost:4000/
+    cd $thm_folder
+    bundle exec jekyll serve --incremental
+    }
 
 # Start
 mainMenu
