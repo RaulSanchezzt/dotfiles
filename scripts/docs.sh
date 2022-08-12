@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Config Variables
 htb_folder=~/Repositories/htb-docusaurus/
@@ -7,8 +7,19 @@ thm_folder=~/Repositories/thm-jekyll/
 # Current date
 date=$(date +"%Y-%m-%d")
 
+# Input of the user
+option="$1"
+
+# Check the Input
+checkInput(){
+  case $option in
+    edit) editPost;;
+    *) menu;;
+  esac
+}
+
 # Functions
-mainMenu(){
+menu(){
   clear
   read -p "Name of the post: " name;
 
@@ -41,6 +52,7 @@ mainMenu(){
       *) HTB;;
     esac
   }
+
 # Hack The Box Submenus
     htbMachines(){
       # Select OS of the machine
@@ -133,13 +145,36 @@ mainMenu(){
     # Create the images folder
     mkdir -p $thm_folder/assets/img/$name
 
-    # Start markdown editor
-    flatpak run com.github.marktext.marktext $thm_folder > /dev/null 2>&1 &
-
-    # Start local server http://localhost:4000/
-    cd $thm_folder
-    bundle exec jekyll serve --incremental
+    thmStart
     }
 
+    thmStart(){
+      clear
+      # Start markdown editor
+      flatpak run com.github.marktext.marktext $thm_folder > /dev/null 2>&1 &
+
+      # Start local server http://localhost:4000/
+      cd $thm_folder
+      bundle exec jekyll serve --incremental
+    }
+
+# Edit post Main Menu
+  editPost(){
+    clear
+    echo "1) Hack The Box"
+    echo "2) Try Hack Me"
+    echo "3) Blog"
+    echo "4) ASIR"
+    read -p "Select the platform: " editPlatform;
+
+    case $editPlatform in
+      1) htbStart;;
+      2) thmStart;;
+      3) blogStart;;
+      4) asirStart;;
+      *) editPost;;
+    esac
+  }
+
 # Start
-mainMenu
+checkInput
