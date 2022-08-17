@@ -36,5 +36,9 @@
   sudo rm -rf /usr/share/doc/fzf/examples
   sudo ln -sf ~/dotfiles/fzf/examples /usr/share/doc/fzf/examples
 
+  # root dotfiles
+  sudo ln -sf ~/dotfiles/ /root/dotfiles
+  echo "root dotfiles created"
+
   # bat command
   # sudo ln -sf /usr/bin/bat /usr/bin/batcat
