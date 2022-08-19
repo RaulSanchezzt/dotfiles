@@ -1,7 +1,7 @@
 #!/bin/sh
 
 hosts_backup=/etc/hosts.bak
-thm_path=~/Dropbox/THM/
+thm_path=/home/raul/Dropbox/THM/
 
 checkBackupFile(){
   # Checks if a backup copy exists
@@ -58,7 +58,11 @@ allowFirewall(){
 
 createDirectory(){
   # Create the working directory of the machine
-  mkdir $thm_path/$name
+  mkdir -p $thm_path/$name/content
+  mkdir -p $thm_path/$name/docs
+  mkdir -p $thm_path/$name/exploits
+  mkdir -p $thm_path/$name/nmap
+
   echo "[!] Working directory created"
   
   setTarget;
@@ -66,9 +70,16 @@ createDirectory(){
 
 setTarget(){  
   # Set Target in Polybar
-  echo "$address" > ~/.config/polybar/scripts/targetIP
-  echo "$name" > ~/.config/polybar/scripts/targetName
+  echo "$address" > /home/raul/.config/polybar/scripts/targetIP
+  echo "$name" > /home/raul/.config/polybar/scripts/targetName
   echo "[!] Initial configuration completed"
+  
+  changeDirectory;
+}
+
+changeDirectory(){
+  cd $thm_path/$name
+  $SHELL 
 }
 
 # Start
