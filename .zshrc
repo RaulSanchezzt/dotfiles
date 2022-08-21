@@ -33,6 +33,7 @@ alias egrep='egrep --color=auto'
 alias cat='/usr/bin/batcat'
 alias catn='/usr/bin/cat'
 alias catnl='/bin/batcat --paging=never'
+alias icat="kitty +kitten icat"
 alias ct='sh ~/dotfiles/polybar/scripts/clear_target.sh'
 alias vpn='sh ~/dotfiles/scripts/vpn.sh'
 alias htb='sh ~/dotfiles/scripts/htb.sh'
