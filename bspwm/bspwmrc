@@ -3,12 +3,14 @@
 # SXKD
 sxhkd &
 
-# Desktops
-bspc monitor HDMI-A-0 -d 2 3 4 5
-bspc monitor DVI-D-0 -d 1
+# Unique Monitor
+bspc monitor -d 1 2 3 4 5 6 7 8
 
-# Multiple Monitors Config
-xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output DisplayPort-0 --mode 1440x900 --left-of HDMI-A-0
+# Multiple Monitors
+# bspc monitor HDMI-A-0 -d 2 3 4 5
+# bspc monitor DVI-D-0 -d 1
+# xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output DisplayPort-0 --mode 1440x900 --left-of HDMI-A-0
+
 # Borders
 bspc config border_width            0
 
