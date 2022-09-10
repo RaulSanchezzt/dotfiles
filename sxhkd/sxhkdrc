@@ -97,11 +97,11 @@ super + e
 	thunar
 
 # emojis
-super + s
+super + j
 	flatpak run it.mijorus.smile
 
 # screenshots
-super + g
+super + s
 	flameshot gui
 
 # fonts
