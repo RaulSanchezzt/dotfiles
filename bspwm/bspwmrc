@@ -4,18 +4,21 @@
 sxhkd &
 
 # Unique Monitor
-bspc monitor -d 1 2 3 4 5 6 7 8
+# bspc monitor -d 1 2 3 4 5 6 7 8
 
 # Multiple Monitors
-# bspc monitor HDMI-A-0 -d 2 3 4 5
-# bspc monitor DVI-D-0 -d 1
-# xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output DisplayPort-0 --mode 1440x900 --left-of HDMI-A-0
+bspc monitor HDMI-A-0 -d 2 3 4 5
+bspc monitor DVI-D-0 -d 1
+xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output DisplayPort-0 --mode 1440x900 --left-of HDMI-A-0
 
 # Borders
 bspc config border_width            0
 
 # Separation between windows
 bspc config window_gap              10
+
+# Borders
+bspc config border_width            1
 
 # Paddings
 #bspc config top_padding             10
@@ -30,13 +33,16 @@ bspc config focus_follows_pointer   true
 xsetroot -cursor_name left_ptr &
 
 # Wallpaper
-feh --bg-fill ~/dotfiles/kali-wallpapers/kali-neon-16x9.png
+feh --bg-fill /home/$USER/Pictures/current-wallpaper.jpg
 
 # Polybar
 ~/.config/polybar/./launch.sh &
 
 # Picom
 picom &
+
+# Set the window manager name to fix problems with JDK versions and other broken programs assuming a reparenting window manager for instance.
+wmname LG3D &
 
 # Dropbox
 dropbox start &
