@@ -115,3 +115,7 @@ super + o
 # BurpSuite
 super + b
     burpsuite
+
+# VMware Workstation
+super + v
+  vmware
