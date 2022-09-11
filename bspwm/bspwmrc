@@ -26,10 +26,27 @@ bspc config border_width            1
 #bspc config left_padding            2
 #bspc config right_padding           2
 
+# Configs
 bspc config split_ratio             0.52
 bspc config borderless_monocle      false
 bspc config gapless_monocle         true
 bspc config focus_follows_pointer   true
+
+# Rules
+# Use xprop | grep CLASS to obtain the name of the app
+
+# Web Proxy: BurpSuite
+bspc rule -a burp-StartBurp desktop='^1' follow=on focus=on
+# Terminal: Kitty
+bspc rule -a kitty desktop='^2' follow=on focus=on
+# Web Browser: Firefox
+bspc rule -a Firefox-esr desktop='^3' follow=on focus=on
+# File Explorer: Thunar
+bspc rule -a Thunar desktop='^4' follow=on focus=on
+# IDE: Visual Studio Code
+bspc rule -a Code desktop='^5' follow=on focus=on
+
+# Set cursor name
 xsetroot -cursor_name left_ptr &
 
 # Wallpaper
