@@ -45,6 +45,8 @@ bspc rule -a Firefox-esr desktop='^3' follow=on focus=on
 bspc rule -a Thunar desktop='^4' follow=on focus=on
 # IDE: Visual Studio Code
 bspc rule -a Code desktop='^5' follow=on focus=on
+# Markdown Editor: Obsidian
+bspc rule -a obsidian desktop='^5' follow=on focus=on
 
 # Set cursor name
 xsetroot -cursor_name left_ptr &
