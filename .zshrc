@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# PATH
 export PATH=~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:$PATH:/usr/local/go/bin
 
 # Fix slowness of pasting with zsh-syntax-highlighting.zsh
@@ -143,6 +144,20 @@ function extractPorts(){
     echo -e "${blueColour}[*] Ports copied to clipboard${endColour}\n"
 }
 
+# Enter monitor mode -> Run it as root
+function mon(){
+  interface="wlx14ebb6458935"
+  
+  airmon-ng check kill
+  ip link set $interface down
+  iw dev $interface set type monitor
+
+  echo -e "${blueColour}[!] Checking Monitor mode${endColour}"
+  aireplay-ng -9 $interface 
+
+  echo -e "${redColour}[+] Monitor mode activated${endColour}"
+}
+
 # ========== FIX ========== #
 # Java
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -151,6 +166,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # https://stackoverflow.com/questions/36977990/why-zsh-adds-at-the-end-of-my-output
 export PROMPT_EOL_MARK=''
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
