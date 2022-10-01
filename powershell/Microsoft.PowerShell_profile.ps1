@@ -6,7 +6,7 @@ Import-Module -Name Terminal-Icons
 
 # Blog ASIR
 Set-Alias cdb changeDirToBlogAsir
-Set-Alias blog startHugoServer
+Set-Alias blog startBlogAsir
 Set-Alias aso createNewPostASO
 Set-Alias sadi createNewPostSADi
 Set-Alias gitb gitBlogRepo
@@ -45,9 +45,9 @@ function gitBlogRepo {
 }
 
 # Git
-function gitStatus { git status }
-function gitCommit { git commit }
-function gitAdd { git add }
-function gitPush { git push }
-function gitPull { git pull }
-function gitDiff { git diff }
+function gitStatus { git status $args}
+function gitCommit { git commit $args}
+function gitAdd { git add $args}
+function gitPush { git push $args}
+function gitPull { git pull $args}
+function gitDiff { git diff $args}
