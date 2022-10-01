@@ -39,7 +39,7 @@ alias ct='sh ~/dotfiles/polybar/scripts/clear_target.sh'
 alias vpn='sh ~/dotfiles/scripts/vpn.sh'
 alias htb='sh ~/dotfiles/scripts/htb.sh'
 alias thm='sh ~/dotfiles/scripts/thm.sh'
-alias docs='sh ~/dotfiles/scripts/docs.sh'
+alias docs='source ~/dotfiles/scripts/docs.sh'
 
 # ========== GIT ALIAS ========== #
 alias gs='git status'
