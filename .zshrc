@@ -37,8 +37,8 @@ alias catnl='/bin/batcat --paging=never'
 alias icat="kitty +kitten icat"
 alias ct='sh ~/dotfiles/polybar/scripts/clear_target.sh'
 alias vpn='sh ~/dotfiles/scripts/vpn.sh'
-alias htb='sh ~/dotfiles/scripts/htb.sh'
-alias thm='sh ~/dotfiles/scripts/thm.sh'
+alias htb='source ~/dotfiles/scripts/new.sh HTB'
+alias thm='source ~/dotfiles/scripts/new.sh THM'
 alias docs='source ~/dotfiles/scripts/docs.sh'
 
 # ========== GIT ALIAS ========== #
