@@ -1,29 +1,38 @@
-# Dotfiles
+# BSPWM
 
-This are my personal `dotfiles` that I use. Check it, fork or ask me for any question. 
+This are my personal `dotfiles` that I use in Linux. 
+
+![](assets/bspwm-preview.png)
 
 ## Installation
-1. Clone this repository and change the directory
+1. Clone this repository and change the directory.
 
 ```bash
-git clone https://github.com/RaulSanchezzt/dotfiles.git ~/dotfiles && cd ~/dotfiles
+# Using HTTP
+$ git clone https://github.com/RaulSanchezzt/dotfiles.git ~/dotfiles && cd ~/dotfiles
+
+# Using SSH
+$ git clone git@github.com:RaulSanchezzt/dotfiles.git ~/dotfiles && cd ~/dotfiles
 ```
 
-2. This script will automatically create the necessary symbolic links to this `dotfiles`. Give the current user execute permissions
+2. Switch to `bspwm` branch. 
 
 ```bash
-chmod +x link.sh
+$ git checkout bspwm
 ```
 
-3. Run the script
+3. Run the script to make the symlinks.
 
 ```bash
-./link.sh
+# Give the current user execute permissions
+$ chmod +x link.sh
+
+$ ./link.sh
 ```
 
-> Close the terminal and open another to see the changes
+4. Close the terminal and open another to see the changes.
 
-- To update the configuration use `git pull` inside the `dotfiles` directory.
+> To update the configuration use git pull inside the dotfiles directory.
 
 ## Keybindings
 > These are the  keybindings of this window manager.
