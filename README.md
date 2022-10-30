@@ -1,6 +1,7 @@
 # WSL - Ubuntu
 
 This are my personal **dotfiles** that I use in Windows Subsystem for Linux.
+![](assets/wsl-preview.png)
 
 ## Installation
 
