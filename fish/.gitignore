@@ -1,0 +1,5 @@
+# Fish plugins directories
+completions/
+conf.d/
+functions/
+fish_plugins

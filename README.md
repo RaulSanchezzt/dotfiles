@@ -45,6 +45,7 @@ $ ./link.sh
 - [Go](https://go.dev/)
     - [Hugo Extended](https://gohugo.io/)
 - [PHP](https://www.php.net/)
+- [npm](https://www.npmjs.com/)
 
 ### Command Line
 
@@ -52,10 +53,16 @@ $ ./link.sh
 
 - [Fish](https://fishshell.com/)
 
+### Plugins
+
+- [fisher](https://github.com/jorgebucaran/fisher)
+- [nvm.fish](https://github.com/jorgebucaran/nvm.fish)
+
 #### Prompt
 
 - [Starship](https://starship.rs/)
 
 #### Tools
+
 - [bat](https://github.com/sharkdp/bat)
 - [exa](https://github.com/ogham/exa)
