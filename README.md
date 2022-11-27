@@ -39,13 +39,14 @@ $ ./link.sh
 ### Dev tools
 
 - [Git](https://git-scm.com/)
-
-### Languages and Frameworks
-
 - [Go](https://go.dev/)
     - [Hugo Extended](https://gohugo.io/)
 - [PHP](https://www.php.net/)
-- [npm](https://www.npmjs.com/)
+- [MariaDB](https://mariadb.com/)
+- [Python3](https://www.python.org/)
+- [Node.js](https://nodejs.org/en/)
+    - [npm](https://www.npmjs.com/)
+
 
 ### Command Line
 
@@ -53,7 +54,7 @@ $ ./link.sh
 
 - [Fish](https://fishshell.com/)
 
-### Plugins
+#### Plugins
 
 - [fisher](https://github.com/jorgebucaran/fisher)
 - [nvm.fish](https://github.com/jorgebucaran/nvm.fish)
