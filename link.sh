@@ -6,7 +6,7 @@
   
   # .gitconfig
   ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-  echo ".p10k.zsh symlink created"
+  echo ".gitconfig symlink created"
 
   # .profile
   ln -sf ~/dotfiles/.profile ~/.profile
