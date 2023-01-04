@@ -30,7 +30,13 @@ $ chmod +x link.sh
 $ ./link.sh
 ```
 
-4. Close the terminal and open another to see the changes
+4. Create a new symbolic link to the `fish` directory as **root**.
+
+```bash
+# ln -sf /home/raul/dotfiles/fish/ ~/.config/fish
+```
+
+5. Close the terminal and open another to see the changes
 
 > To update the configuration use git pull inside the dotfiles directory.
 
