@@ -37,5 +37,11 @@ end
 # Start Starship
 starship init fish | source
 
+# Config File Location
+set -g -x STARSHIP_CONFIG "$HOME/dotfiles/fish/starship.toml"
+
 # Hide Starship Warnings
 set -g -x STARSHIP_LOG error
+
+# Start NVM
+nvm use lts >/dev/null
