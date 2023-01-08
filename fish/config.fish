@@ -36,3 +36,6 @@ end
 
 # Start Starship
 starship init fish | source
+
+# Hide Starship Warnings
+set -g -x STARSHIP_LOG error
