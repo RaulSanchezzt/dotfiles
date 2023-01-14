@@ -3,7 +3,11 @@
   # bspwm
   ln -sf ~/dotfiles/bspwm/ ~/.config/bspwm
   echo "bspwm symlink created"
-  
+
+  # fish
+  ln -sf ~/dotfiles/fish ~/.config/fish
+  echo "fish symlink created"
+
   # fzf
   sudo rm -rf /usr/share/doc/fzf/examples
   sudo ln -sf ~/dotfiles/fzf/examples /usr/share/doc/fzf/examples
