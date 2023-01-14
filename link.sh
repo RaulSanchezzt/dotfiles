@@ -4,6 +4,14 @@
   ln -sf ~/dotfiles/bspwm/ ~/.config/bspwm
   echo "bspwm symlink created"
   
+  # fzf
+  sudo rm -rf /usr/share/doc/fzf/examples
+  sudo ln -sf ~/dotfiles/fzf/examples /usr/share/doc/fzf/examples
+  
+  # .gitconfig
+  ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+  echo ".p10k.zsh symlink created"
+  
   # kitty
   ln -sf ~/dotfiles/kitty/ ~/.config/kitty
   echo "kitty symlink created"
@@ -27,14 +35,6 @@
   # .p10k.zsh
   ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
   echo ".p10k.zsh symlink created"
-
-  # .gitconfig
-  ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-  echo ".p10k.zsh symlink created"
-
-  # fzf
-  sudo rm -rf /usr/share/doc/fzf/examples
-  sudo ln -sf ~/dotfiles/fzf/examples /usr/share/doc/fzf/examples
 
   # root dotfiles
   sudo ln -sf ~/dotfiles/ /root/dotfiles
