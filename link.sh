@@ -28,14 +28,6 @@
   ln -sf ~/dotfiles/sxhkd/ ~/.config/sxhkd
   echo "sxhkd symlink created"
 
-  # .zshrc
-  ln -sf ~/dotfiles/.zshrc ~/.zshrc
-  echo ".zshrc symlink created"
-
-  # .p10k.zsh
-  ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
-  echo ".p10k.zsh symlink created"
-
   # root dotfiles
   sudo ln -sf ~/dotfiles/ /root/dotfiles
   echo "root dotfiles created"
