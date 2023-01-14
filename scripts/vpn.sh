@@ -1,7 +1,7 @@
 #!/bin/bash
 
-htb_vpn=~/Dropbox/VPN/htb.ovpn
-thm_vpn=~/Dropbox/VPN/thm.ovpn
+htb_vpn=~/VPN/htb.ovpn
+thm_vpn=~/VPN/thm.ovpn
 
 option="$1"
 
