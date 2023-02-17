@@ -18,7 +18,7 @@ alias gb "git add . && git commit -m 'Add work' && git push"
 
 # ASIR
 
-set blog /mnt/c/Users/Raul/Code/blog-asir/
+set blog /home/raul/blog-asir/
 
 function cdb
     cd $blog
@@ -26,12 +26,7 @@ end
 
 function aso
     cdb
-    cp templates/aso.md content/post/aso/index.md
-end
-
-function sadi
-    cdb
-    cp templates/sadi.md content/post/sadi/index.md
+    cp templates/aso.md content/post/aso/2023/index.md
 end
 
 # Start Starship
