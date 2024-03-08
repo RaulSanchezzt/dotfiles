@@ -7,6 +7,9 @@ alias ls "exa --group-directories-first"
 alias tree "exa -T"
 alias blog "hugo server"
 
+# AI
+alias fuzzy "/home/raul/FuzzyCLIPS/source/fz_clips"
+
 # Git
 alias gs "git status"
 alias gc "git commit"
@@ -40,3 +43,6 @@ set -g -x STARSHIP_LOG error
 
 # Start NVM
 nvm use lts >/dev/null
+export PATH="$PATH:/home/raul/.foundry/bin"
+
+export PATH="$PATH:/home/raul/.foundry/bin"
