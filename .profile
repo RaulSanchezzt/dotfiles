@@ -28,3 +28,10 @@ fi
 
 # PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:"/home/raul/.local/share/solana/install/active_release/bin"
+
+export PATH="/home/raul/.local/share/solana/install/active_release/bin:$PATH"
+. "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
